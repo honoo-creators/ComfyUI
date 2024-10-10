@@ -6,7 +6,7 @@ import { JSDOM } from "jsdom";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const distIndexPath = path.resolve(__dirname, "../dist/index.html");
+const distIndexPath = path.resolve(__dirname, "../.output/public/index.html");
 let distIndexContent = "";
 if (fs.existsSync(distIndexPath)) {
 	distIndexContent = fs.readFileSync(distIndexPath, "utf-8");

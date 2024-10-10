@@ -1,0 +1,183 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  font-size: 0.9259259259vw;
+  scroll-behavior: smooth;
+}
+
+body {
+  position: relative;
+  z-index: 0;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  background-color: #2c2c2e;
+  overflow-y: auto;
+  font-family: greycliff-cf, "Hiragino Kaku Gothic W4 JIS2004", "Hiragino Sans", sans-serif;
+  color: #383739;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  font-feature-settings: "kern" 1;
+}
+body ::selection {
+  background: #fe2622;
+  color: #efefef;
+}
+body img::selection {
+  background: transparent;
+}
+body._scrollLock {
+  overflow: hidden;
+}
+body:not(._darkmode) {
+  background-color: #efefef;
+}
+@font-face {
+  font-family: "Hiragino Sans";
+  src: local(HiraginoSans-W4);
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Hiragino Sans";
+  src: local(HiraginoSans-W7);
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Hiragino Sans";
+  src: local(HiraginoSans-W8);
+  font-weight: 800;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  transition-duration: 0.25s;
+  transition-timing-function: ease;
+  color: #44a1f8;
+  text-decoration: none;
+}
+
+figure {
+  margin: 0;
+}
+
+ul {
+  padding-left: 1.6em;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+ul li + li {
+  margin-top: 0.6em;
+}
+
+.grecaptcha-badge {
+  visibility: hidden;
+}
+
+/* text decoration */
+.pc a[href^="tel:"] {
+  cursor: default;
+  pointer-events: none;
+}
+
+:root {
+  --color-primary: #fe2622;
+  --color-secondary: #383739;
+  --color-dark: #383739;
+  --color-darkblack: #2c2c2e;
+  --color-light: #efefef;
+  --color-ultralight: #fafafb;
+  --color-danger: #fe2622;
+  --color-success: #44a1f8;
+  --color-info: #e8e7e8;
+  --color-primary03: rgba(254, 38, 34, 0.03);
+  --color-primary05: rgba(254, 38, 34, 0.05);
+  --color-primary07: rgba(254, 38, 34, 0.07);
+  --color-primary10: rgba(254, 38, 34, 0.1);
+  --color-primary15: rgba(254, 38, 34, 0.15);
+  --color-primary20: rgba(254, 38, 34, 0.2);
+  --color-primary25: rgba(254, 38, 34, 0.25);
+  --color-primary30: rgba(254, 38, 34, 0.3);
+  --color-primary40: rgba(254, 38, 34, 0.4);
+  --color-primary50: rgba(254, 38, 34, 0.5);
+  --color-primary60: rgba(254, 38, 34, 0.6);
+  --color-primary70: rgba(254, 38, 34, 0.7);
+  --color-primary80: rgba(254, 38, 34, 0.8);
+  --color-primary90: rgba(254, 38, 34, 0.9);
+  --color-primary100: #fe2622;
+  --color-dark03: rgba(56, 55, 57, 0.03);
+  --color-dark05: rgba(56, 55, 57, 0.05);
+  --color-dark07: rgba(56, 55, 57, 0.07);
+  --color-dark10: rgba(56, 55, 57, 0.1);
+  --color-dark15: rgba(56, 55, 57, 0.15);
+  --color-dark20: rgba(56, 55, 57, 0.2);
+  --color-dark25: rgba(56, 55, 57, 0.25);
+  --color-dark30: rgba(56, 55, 57, 0.3);
+  --color-dark40: rgba(56, 55, 57, 0.4);
+  --color-dark50: rgba(56, 55, 57, 0.5);
+  --color-dark60: rgba(56, 55, 57, 0.6);
+  --color-dark70: rgba(56, 55, 57, 0.7);
+  --color-dark80: rgba(56, 55, 57, 0.8);
+  --color-dark90: rgba(56, 55, 57, 0.9);
+  --color-dark100: #383739;
+  --color-light03: rgba(239, 239, 239, 0.03);
+  --color-light05: rgba(239, 239, 239, 0.05);
+  --color-light07: rgba(239, 239, 239, 0.07);
+  --color-light10: rgba(239, 239, 239, 0.1);
+  --color-light15: rgba(239, 239, 239, 0.15);
+  --color-light20: rgba(239, 239, 239, 0.2);
+  --color-light25: rgba(239, 239, 239, 0.25);
+  --color-light30: rgba(239, 239, 239, 0.3);
+  --color-light40: rgba(239, 239, 239, 0.4);
+  --color-light50: rgba(239, 239, 239, 0.5);
+  --color-light60: rgba(239, 239, 239, 0.6);
+  --color-light70: rgba(239, 239, 239, 0.7);
+  --color-light80: rgba(239, 239, 239, 0.8);
+  --color-light90: rgba(239, 239, 239, 0.9);
+  --color-light100: #efefef;
+  --color-danger03: rgba(254, 38, 34, 0.03);
+  --color-danger05: rgba(254, 38, 34, 0.05);
+  --color-danger07: rgba(254, 38, 34, 0.07);
+  --color-danger10: rgba(254, 38, 34, 0.1);
+  --color-danger15: rgba(254, 38, 34, 0.15);
+  --color-danger20: rgba(254, 38, 34, 0.2);
+  --color-danger25: rgba(254, 38, 34, 0.25);
+  --color-danger30: rgba(254, 38, 34, 0.3);
+  --color-danger40: rgba(254, 38, 34, 0.4);
+  --color-danger50: rgba(254, 38, 34, 0.5);
+  --color-danger60: rgba(254, 38, 34, 0.6);
+  --color-danger70: rgba(254, 38, 34, 0.7);
+  --color-danger80: rgba(254, 38, 34, 0.8);
+  --color-danger90: rgba(254, 38, 34, 0.9);
+  --color-danger100: #fe2622;
+  --font-family-base: greycliff-cf, Hiragino Kaku Gothic W4 JIS2004, Hiragino Sans, sans-serif;
+  --font-family-normal: greycliff-cf, Hiragino Kaku Gothic W4 JIS2004, Hiragino Sans, sans-serif;
+  --font-family-bold: greycliff-cf, Hiragino Kaku Gothic W7 JIS2004, Hiragino Sans, sans-serif;
+  --font-family-extrabold: greycliff-cf, Hiragino Kaku Gothic W8 JIS2004, Hiragino Sans, sans-serif;
+  --font-ja-size-adjust: 0.96;
+  --breakpoint-xxl: 1680px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-l: 1024px;
+  --breakpoint-m: 680px;
+  --breakpoint-s: 430px;
+  --breakpoint-xs: 0px;
+  --media-query-xxl: (min-width: 1680px);
+  --media-query-xl: (min-width: 1280px);
+  --media-query-l: (min-width: 1024px);
+  --media-query-m: (min-width: 680px);
+  --media-query-s: (min-width: 430px);
+  --media-query-xs: (min-width: 0px);
+  --max-width-narrow: 392;
+  --max-width-base: 560;
+  --max-width-wide: 1080;
+}

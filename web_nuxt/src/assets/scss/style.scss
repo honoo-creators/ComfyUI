@@ -1,0 +1,167 @@
+@charset "UTF-8";
+// @use "@honoo-creators/ui/src/runtime/scss/_variables.scss" as var;
+// @use "@honoo-creators/ui/src/runtime/scss/_functions.scss" as func;
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+html {
+	padding: 0;
+	margin: 0;
+	height: 100%;
+	font-size: func.get-vw(10);
+	scroll-behavior: smooth; // スムーズスクロール
+	// オーバースクロールで更新を停止する
+	// overscroll-behavior-y: none; // スクロール限界を超えた時のブラウザ挙動を制御、none はブラウザまで伝えない。
+
+	// Adobe Fonts 読み込み時のフラッシュを防ぐ
+	// 参考 https://michimani.net/post/development-remove-web-fonts-fout/
+	// visibility: hidden;
+	// &.wf-active,
+	// &.loading-delay {
+	// 	visibility: visible;
+	// }
+}
+body {
+	position: relative;
+	z-index: 0;
+	padding: 0;
+	margin: 0;
+	height: 100%;
+	background-color: var.$dark-black;
+	overflow-y: auto;
+
+	font-family: var.$font-family-base;
+	// font-size: 1.4rem;
+	color: var.$black;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-text-size-adjust: 100%;
+	font-feature-settings: "kern" 1;
+
+	::selection {
+		background: var.$primary;
+		color: var.$light;
+	}
+	img::selection {
+		background: transparent;
+	}
+
+	&._scrollLock {
+		overflow: hidden;
+	}
+
+	// ダークモードではない時
+	&:not(._darkmode) {
+		background-color: var.$light;
+	}
+
+	// MacOSX のための設定
+	&._macintosh {
+		@font-face {
+			font-family: "Hiragino Sans";
+			src: local(HiraginoSans-W4);
+			font-weight: 400;
+		}
+		@font-face {
+			font-family: "Hiragino Sans";
+			src: local(HiraginoSans-W7);
+			font-weight: 700;
+		}
+		@font-face {
+			font-family: "Hiragino Sans";
+			src: local(HiraginoSans-W8);
+			font-weight: 800;
+		}
+	}
+}
+img {
+	max-width: 100%;
+}
+a {
+	transition-duration: 0.25s;
+	transition-timing-function: ease;
+	color: var.$blue;
+	text-decoration: none;
+}
+figure {
+	margin: 0;
+}
+ul {
+	padding-left: 1.6em;
+	margin-top: 0;
+	margin-bottom: 0;
+
+	li + li {
+		margin-top: 0.6em;
+	}
+}
+
+// recaptchaバッジの非表示
+.grecaptcha-badge {
+	visibility: hidden;
+}
+
+/* text decoration */
+.pc a[href^="tel:"] {
+	cursor: default;
+	pointer-events: none;
+}
+
+:root {
+	// 主要カラーの設定
+	@each $colorStr in var.$colors-str {
+		$index-key: index(var.$colors-str, $colorStr);
+		--color-#{$colorStr}: #{nth(var.$colors, $index-key)};
+	}
+
+	// プライマリ色の設定
+	@each $primaryColorStr in var.$primarys-str {
+		$index-key: index(var.$primarys-str, $primaryColorStr);
+		--color-#{$primaryColorStr}: #{nth(var.$primary-colors, $index-key)};
+	}
+
+	// 濃い色の設定
+	@each $darkColorStr in var.$darks-str {
+		$index-key: index(var.$darks-str, $darkColorStr);
+		--color-#{$darkColorStr}: #{nth(var.$dark-colors, $index-key)};
+	}
+
+	// 薄い色の設定
+	@each $lightColorStr in var.$lights-str {
+		$index-key: index(var.$lights-str, $lightColorStr);
+		--color-#{$lightColorStr}: #{nth(var.$light-colors, $index-key)};
+	}
+
+	// Danger色の設定
+	@each $dangerColorStr in var.$dangers-str {
+		$index-key: index(var.$dangers-str, $dangerColorStr);
+		--color-#{$dangerColorStr}: #{nth(var.$danger-colors, $index-key)};
+	}
+
+	--font-family-base: #{var.$font-family-base};
+	--font-family-normal: #{var.$font-family-normal};
+	--font-family-bold: #{var.$font-family-bold};
+	--font-family-extrabold: #{var.$font-family-extrabold};
+	--font-ja-size-adjust: #{var.$font-ja-size-adjust};
+
+	--breakpoint-xxl: #{var.$breakpoint-xxl};
+	--breakpoint-xl: #{var.$breakpoint-xl};
+	--breakpoint-l: #{var.$breakpoint-l};
+	--breakpoint-m: #{var.$breakpoint-m};
+	--breakpoint-s: #{var.$breakpoint-s};
+	--breakpoint-xs: #{var.$breakpoint-xs};
+
+	--media-query-xxl: (#{var.$media-query-xxl});
+	--media-query-xl: (#{var.$media-query-xl});
+	--media-query-l: (#{var.$media-query-l});
+	--media-query-m: (#{var.$media-query-m});
+	--media-query-s: (#{var.$media-query-s});
+	--media-query-xs: (#{var.$media-query-xs});
+
+	--max-width-narrow: #{var.$max-width-narrow};
+	--max-width-base: #{var.$max-width-base};
+	--max-width-wide: #{var.$max-width-wide};
+}
