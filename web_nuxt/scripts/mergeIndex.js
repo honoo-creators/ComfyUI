@@ -50,18 +50,15 @@ if (
 }
 
 // dist の <head> に web の <head> の内容を追加
-distDom.window.document.head.innerHTML += `
-${headMarkerStart}
-${webHeadContent}
-${headMarkerEnd}
-`;
+distDom.window.document.head.innerHTML =
+	`
+${headMarkerStart}${webHeadContent}${headMarkerEnd}
+` + distDom.window.document.head.innerHTML;
 
 // dist の <body> の先頭に web の <body> の内容を追加
 distDom.window.document.body.innerHTML =
 	`
-${bodyMarkerStart}
-${webBodyContent}
-${bodyMarkerEnd}
+${bodyMarkerStart}${webBodyContent}${bodyMarkerEnd}
 ` + distDom.window.document.body.innerHTML;
 
 // 結果を保存
