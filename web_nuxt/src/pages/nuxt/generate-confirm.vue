@@ -22,7 +22,7 @@
 						{{ name }}
 					</Typography>
 				</Column>
-				<Button @click="generate">
+				<Button @click="useRouter().push(useConstantsPath().OUTPUT)">
 					生成する
 				</Button>
 			</Column>
@@ -51,16 +51,6 @@ definePageMeta({
 // Stores ------------------
 const { lookStyle, base64, promptA, promptB, promptC, promptD } = useGenerateStore()
 const { face, name } = useUsageTypeStore()
-
-// Methods ------------------
-const generate = () => {
-	useDialog().alert({
-		title: '生成する',
-		message: '',
-		icon: 'check',
-		button: 'OK'
-	})
-}
 </script>
 
 <style lang="scss">

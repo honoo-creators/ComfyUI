@@ -12,16 +12,16 @@ export const useAppStore = defineStore({
 			useAppFrontStore().init() // フロントストア
 			useAppBackStore().init() // バックストア
 
-			// ブラウザタブがアクティブになるたびにバージョンを確認
-			document.addEventListener('visibilitychange', () => {
-				if (document.visibilityState === 'visible') {
-					this.checkVersion()
-				}
-			})
-			// ブラウザがフォーカスされるたびにバージョンを確認
-			window.addEventListener('focus', () => {
-				this.checkVersion()
-			})
+			// // ブラウザタブがアクティブになるたびにバージョンを確認
+			// document.addEventListener('visibilitychange', () => {
+			// 	if (document.visibilityState === 'visible') {
+			// 		this.checkVersion()
+			// 	}
+			// })
+			// // ブラウザがフォーカスされるたびにバージョンを確認
+			// window.addEventListener('focus', () => {
+			// 	this.checkVersion()
+			// })
 		},
 
 		/**

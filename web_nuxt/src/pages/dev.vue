@@ -22,7 +22,7 @@ const headerHeight = ref(0);
 
 // Methods ------------------
 const close = () => {
-	useRouter().push('/')
+	useRouter().push(useConstantsPath().DASHBOARD)
 }
 </script>
 

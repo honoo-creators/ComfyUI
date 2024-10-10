@@ -19,8 +19,13 @@ export const useAppFrontStore = defineStore({
 			this.pending = true;
 
 			// Composables 初期化
-			useComfyUI().checkInit(); // ComfyUI の初期化チェック
-			useRouteTracker().init();
+
+			/**
+			 * ルートトラッカー で止まっているため、一旦コメントアウト
+			 */
+			// useRouteTracker().init();
+			// console.log('route tracker init')
+
 			useScroll().init();
 			useViewport().init(); // ビューポート
 			useEnvironment().init(); // アクセス環境

@@ -2,20 +2,30 @@
  * サービス内パス定数
  */
 
+const PREFIX = "/nuxt";
+
 export const useConstantsPath = () => {
 	return {
-		DEV: "/dev",
+		// Development
+		DEV: `/dev`,
+
+		// Root
 		ROOT: "/",
-		DASHBOARD: "/nuxt/dashboard",
+
+		// Dashboard
+		DASHBOARD: `${PREFIX}/dashboard`,
 
 		// Generate
-		GENERATE_LOOKSTYLE: "/nuxt/generate/lookstyle",
-		GENERATE_UPLOAD: "/nuxt/generate/upload",
-		GENERATE_PROMPT_A: "/nuxt/generate/prompt/a",
-		GENERATE_PROMPT_B: "/nuxt/generate/prompt/b",
-		GENERATE_PROMPT_C: "/nuxt/generate/prompt/c",
-		GENERATE_PROMPT_D: "/nuxt/generate/prompt/d",
+		GENERATE_LOOKSTYLE: `${PREFIX}/generate/lookstyle`,
+		GENERATE_UPLOAD: `${PREFIX}/generate/upload`,
+		GENERATE_PROMPT_A: `${PREFIX}/generate/prompt/a`,
+		GENERATE_PROMPT_B: `${PREFIX}/generate/prompt/b`,
+		GENERATE_PROMPT_C: `${PREFIX}/generate/prompt/c`,
+		GENERATE_PROMPT_D: `${PREFIX}/generate/prompt/d`,
 		// Generate confirm
-		GENERATE_CONFIRM: "/nuxt/generate-confirm",
+		GENERATE_CONFIRM: `${PREFIX}/generate-confirm`,
+
+		// Output
+		OUTPUT: `${PREFIX}/output`
 	};
 };
