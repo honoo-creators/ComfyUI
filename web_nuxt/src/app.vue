@@ -28,9 +28,11 @@ import UsageTypeSelectSheet from "~/components/sheet/UsageTypeSelectSheet.vue";
 
 // Composables ------------------
 const { name: sheetName } = useSheet();
+const route = useRoute()
 
 // Data ------------------
 const pending = ref(true);
+const isDev = ref(false)
 
 // Computed ------------------
 const drawer = computed(() => (name) => {
@@ -44,20 +46,32 @@ const drawer = computed(() => (name) => {
 });
 
 // Watch ------------------
-watch(() => useComfyUI().isInit.value, (newVal) => {
-	if (newVal) {
-		// 準備完了
-		pending.value = false;
-		navigateTo(useConstantsPath().DASHBOARD);
-	}
-}, { immediate: true });
+watch(() => route.path, (newPath) => {
+	isDev.value = newPath.startsWith('/dev')
+}, { immediate: true })
 
-onMounted(() => {
+// Lifecycle Hooks ------------------
+onMounted(async () => {
+	// ComfyUI の初期化チェック
+	if (process.env.NODE_ENV !== 'development') {
+		useProcessing().open({ progress: true })
+		await useComfyUI().checkInit();
+		await useUtils().wait(1000); // 少し待たないと ComfyUI でエラーが発生する
+		useProcessing().close();
+	}
+
+	// アプリ全体の初期化
 	useAppStore().init();
 
 	// if (!useAuth().loggedIn.value) {
 	// 	useSheet().open({ name: 'loginRequired' })
 	// }
+
+	// 準備完了
+	pending.value = false;
+
+	await useUtils().wait(100);
+	navigateTo(useConstantsPath().DASHBOARD);
 });
 </script>
 
