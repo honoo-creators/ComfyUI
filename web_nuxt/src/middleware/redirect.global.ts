@@ -14,8 +14,8 @@
 /**
  * 転送期間
  */
-const PERMANENT = 301 // 永続的
-const TEMPORARY = 302 // 一時的
+const PERMANENT = 301; // 永続的
+const TEMPORARY = 302; // 一時的
 
 /**
  * @brief リダイレクト設定
@@ -25,10 +25,10 @@ const TEMPORARY = 302 // 一時的
  * @param {number} [code=301] - リダイレクト時のHTTPステータスコード
  */
 type Redirect = {
-	path: string
-	to: string
-	code: typeof PERMANENT | typeof TEMPORARY | '' // 301 or 302
-}
+	path: string;
+	to: string;
+	code: typeof PERMANENT | typeof TEMPORARY | ""; // 301 or 302
+};
 
 export default defineNuxtRouteMiddleware((to) => {
 	/**
@@ -37,12 +37,14 @@ export default defineNuxtRouteMiddleware((to) => {
 	 */
 	const list: Redirect[] = [
 		// トップ - ダッシュボード
-		{ path: useConstantsPath().ROOT, to: useConstantsPath().DASHBOARD, code: PERMANENT },
-	]
+		// { path: useConstantsPath().ROOT, to: useConstantsPath().DASHBOARD, code: PERMANENT }, // ※ルートディレクトリで ComfyUI の初期化を待つため、ここではリダイレクトしない。
+	];
 
 	// リダイレクトの実行
-	const match = list.find((r) => r.path === to.path)
+	const match = list.find((r) => r.path === to.path);
 	if (match) {
-		return match.code ? navigateTo(match.to, { redirectCode: match.code }) : navigateTo(match.to)
+		return match.code
+			? navigateTo(match.to, { redirectCode: match.code })
+			: navigateTo(match.to);
 	}
-})
+});

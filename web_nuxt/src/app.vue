@@ -43,15 +43,21 @@ const drawer = computed(() => (name) => {
 	return false;
 });
 
+// Watch ------------------
+watch(() => useComfyUI().isInit.value, (newVal) => {
+	if (newVal) {
+		// 準備完了
+		pending.value = false;
+		navigateTo(useConstantsPath().DASHBOARD);
+	}
+}, { immediate: true });
+
 onMounted(() => {
 	useAppStore().init();
 
 	// if (!useAuth().loggedIn.value) {
 	// 	useSheet().open({ name: 'loginRequired' })
 	// }
-
-	// 準備完了
-	pending.value = false;
 });
 </script>
 

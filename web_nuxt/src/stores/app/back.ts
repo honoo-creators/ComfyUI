@@ -3,11 +3,11 @@
  * @description このストアはページ初期時に実行される
  */
 
-import { defineStore } from 'pinia'
-import { useMeStore } from '~/stores/me'
+import { defineStore } from "pinia";
+import { useMeStore } from "~/stores/me";
 
 export const useAppBackStore = defineStore({
-	id: 'appBack',
+	id: "appBack",
 	state: () => ({
 		pending: true, // 準備中フラグ
 	}),
@@ -17,16 +17,16 @@ export const useAppBackStore = defineStore({
 		 */
 		init() {
 			// 既に初期化済みであれば何もしない
-			if (!this.pending) return
+			if (!this.pending) return;
 
-			this.pending = true
+			this.pending = true;
 
 			// ログイン済みであれば
 			if (useAuth().loggedIn.value) {
 				// ログインユーザーの情報を取得
-				useMeStore().init()
+				useMeStore().init();
 			}
-			this.pending = false
+			this.pending = false;
 		},
 	},
-})
+});

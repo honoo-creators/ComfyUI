@@ -3,10 +3,10 @@
  * @description このストアはアプリ起動時に必ず初期化される
  */
 
-import { defineStore } from 'pinia'
+import { defineStore } from "pinia";
 
 export const useAppFrontStore = defineStore({
-	id: 'appFront',
+	id: "appFront",
 	state: () => ({
 		pending: true, // 準備中フラグ
 	}),
@@ -16,25 +16,28 @@ export const useAppFrontStore = defineStore({
 		 */
 		async init() {
 			// 準備中
-			this.pending = true
+			this.pending = true;
 
 			// Composables 初期化
-			useRouteTracker().init()
-			useScroll().init()
-			useViewport().init() // ビューポート
-			useEnvironment().init() // アクセス環境
+			useComfyUI().checkInit(); // ComfyUI の初期化チェック
+			useRouteTracker().init();
+			useScroll().init();
+			useViewport().init(); // ビューポート
+			useEnvironment().init(); // アクセス環境
 			useWebFonts().init({
-				jaAdjust: Number(useCss().getVariable('fontJaSizeAdjust')),
-				exLocation: [''],
-				exOS: ['Macintosh']
-			}) // WEBフォント
-			useMode().setDarkmode(useRuntimeConfig().public.DARKMODE) // モード
-			useMode().setSizeType(useRuntimeConfig().public.SIZE_TYPE as 'px' | 'auto') // サイズタイプ
-			useMediaQuery().init() // メディアクエリ
-			useRuntimeConfig().public.DEV_ENABLED && useDev().init() // 開発メニュー
+				jaAdjust: Number(useCss().getVariable("fontJaSizeAdjust")),
+				exLocation: [""],
+				exOS: ["Macintosh"],
+			}); // WEBフォント
+			useMode().setDarkmode(useRuntimeConfig().public.DARKMODE); // モード
+			useMode().setSizeType(
+				useRuntimeConfig().public.SIZE_TYPE as "px" | "auto"
+			); // サイズタイプ
+			useMediaQuery().init(); // メディアクエリ
+			useRuntimeConfig().public.DEV_ENABLED && useDev().init(); // 開発メニュー
 
 			// 準備中解除
-			this.pending = false
+			this.pending = false;
 		},
 	},
-})
+});
