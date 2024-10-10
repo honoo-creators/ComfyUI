@@ -1,6 +1,13 @@
 # Nuxt dev/build outputs
 _nuxt
+
+# @honoo-creators/ui のファイル
 avatar
 icons
 imgs
+
+# Pages
 nuxt
+
+# Dev Pages
+dev
