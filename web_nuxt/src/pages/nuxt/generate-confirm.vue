@@ -35,6 +35,7 @@ import PageIntro from '~/components/elements/PageIntro.vue'
 import LookStyleSetting from '~/components/elements/LookStyleSetting.vue'
 import ImageSetting from '~/components/elements/ImageSetting.vue'
 import PromptSetting from '~/components/elements/PromptSetting.vue'
+import GenerateSettingItem from '~/components/navigation/GenerateSettingItem.vue'
 import { useGenerateStore } from '~/stores/generate'
 import { useUsageTypeStore } from '~/stores/usage-type'
 

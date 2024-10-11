@@ -10,6 +10,7 @@ import promptWilderness from '~/assets/prompts/wilderness.json'
 import promptNostalgic from '~/assets/prompts/nostalgic.json'
 import promptNeoNippon from '~/assets/prompts/neo-nippon.json'
 import promptFantasy from '~/assets/prompts/fantasy.json'
+import workflow from '~/../workflows/test001.json';
 
 const THEMES = {
 	'Metro City': promptMetroCity,
@@ -29,6 +30,7 @@ export const useGenerateStore = defineStore({
 		promptB: [] as string[],
 		promptC: [] as string[],
 		promptD: [] as string[],
+		workflow,
 	}),
 	getters: {
 		promptASuggests: (state) => THEMES[state.lookStyle?.name as keyof typeof THEMES]?.whatToDraw ?? [],
@@ -68,6 +70,14 @@ export const useGenerateStore = defineStore({
 		},
 		setPromptD(value: string[]) {
 			this.promptD = value
+		},
+
+		/**
+		 * カスタム Workflow を設定する
+		 * @param {string} json - Workflow の JSON 文字列
+		 */
+		setWorkflow(json: string) {
+			this.workflow = JSON.parse(json)
 		},
 
 		/**

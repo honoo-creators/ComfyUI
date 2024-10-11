@@ -8,6 +8,9 @@
 				<Clickable v-for="item in list" :key="item.id" class="pageGenerateLookstyle-item" @click="handleClick(item.id)">
 					<LookStyle :data="item" :current="item.id === lookStyle?.id" />
 				</Clickable>
+				<Clickable class="pageGenerateLookstyle-item" @click="handleCustomClick">
+					<LookStyle :data="customLookStyle" :current="customLookStyle.id === lookStyle?.id" />
+				</Clickable>
 			</Row>
 		</Container>
 	</Column>
@@ -55,6 +58,14 @@ const list: LookStyleType[] = [
 		thumbnail_path: 'https://cdn.pixabay.com/photo/2024/05/29/04/00/sky-8795092_1280.jpg'
 	}
 ]
+const customLookStyle: LookStyleType = {
+	id: -1,
+	name: 'Custom Load',
+	thumbnail_path: 'https://cdn.pixabay.com/photo/2023/02/27/15/15/abstract-7818693_1280.jpg'
+}
+
+// Composables ------------------
+const file = useFile()
 
 // Stores ------------------
 const store = useGenerateStore()
@@ -66,6 +77,31 @@ const handleClick = (id: number) => {
 	if (!lookStyle) return
 	store.setLookStyle(lookStyle)
 	useRouter().push(useConstantsPath().GENERATE_UPLOAD)
+}
+const handleCustomClick = async () => {
+	const selectFile = await file.select(['json'])
+	const blobUrl = selectFile.file as string
+
+	const readBlobAsText = async (blob: Blob): Promise<string> => {
+		return new Promise((resolve, reject) => {
+			const reader = new FileReader()
+			reader.onload = () => resolve(reader.result as string)
+			reader.onerror = () => reject(new Error('ファイルの読み込みに失敗しました'))
+			reader.readAsText(blob)
+		})
+	}
+
+	try {
+		const response = await fetch(blobUrl)
+		const blob = await response.blob()
+		const jsonString = await readBlobAsText(blob)
+		const lookstyle = { ...customLookStyle, name: selectFile.name.replace('.json', '') }
+		store.setLookStyle(lookstyle)
+		store.setWorkflow(jsonString)
+		useRouter().push(useConstantsPath().GENERATE_UPLOAD)
+	} catch (error) {
+		console.error('JSONの変換に失敗しました:', error)
+	}
 }
 </script>
 

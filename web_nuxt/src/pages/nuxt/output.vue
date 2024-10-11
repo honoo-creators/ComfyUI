@@ -33,6 +33,9 @@ import { useGenerateStore } from '~/stores/generate';
 // Composables ------------------
 const { isQueue, queueRemaining, output, estimatedTime } = useComfyUI();
 
+// Stores ------------------
+const store = useGenerateStore();
+
 // Page Settings ------------------
 definePageMeta({
 	middleware: 'generate',
@@ -45,7 +48,7 @@ definePageMeta({
 
 // Constants ------------------	
 const SPLIT = 3;
-const BATCH_COUNT = 1;
+const BATCH_COUNT = 9;
 
 // Computed ----------------------
 const title = computed(() => {
@@ -72,13 +75,13 @@ const handleEditSetting = () => {
 	navigateTo(useConstantsPath().GENERATE_LOOKSTYLE)
 }
 const handleNewGenerate = () => {
-	useGenerateStore().init()
+	store.init()
 	navigateTo(useConstantsPath().GENERATE_LOOKSTYLE)
 }
 
 // Lifecycle Hooks ------------------
 onMounted(() => {
-	useComfyUI().queuePrompt({ json: JSON.stringify(test001), batchCount: BATCH_COUNT })
+	useComfyUI().queuePrompt({ json: JSON.stringify(store.workflow), batchCount: BATCH_COUNT })
 })
 </script>
 

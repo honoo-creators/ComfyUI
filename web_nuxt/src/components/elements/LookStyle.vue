@@ -1,7 +1,8 @@
 <template>
 	<div class="lookStyle" :class="{ _current: current }">
 		<div class="lookStyle-image">
-			<Image v-bind="{ src }" cover />
+			<Image v-if="src" v-bind="{ src }" cover />
+			<LoaderRect v-else w="100%" h="100%" />
 		</div>
 		<div class="lookStyle-name">
 			<LookStyleRatio>
