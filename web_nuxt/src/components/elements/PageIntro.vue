@@ -1,6 +1,11 @@
 <template>
 	<Column class="pageIntro" justify="center" gap="24">
-		<Icon :name="icon" :size="iconSize" />
+		<template v-if="spinner">
+			<LoaderIcon :size="iconSize" />
+		</template>
+		<template v-else-if="icon">
+			<Icon :name="icon" :size="iconSize" />
+		</template>
 		<Typography v-if="title" class="pageIntro-title" title2 extrabold center>
 			<span v-html="title" />
 		</Typography>
@@ -13,6 +18,7 @@
 <script setup lang="ts">
 // Props ------------------
 defineProps({
+	spinner: { type: Boolean, default: false },
 	icon: { type: String, default: '' },
 	iconSize: { type: Number, default: 40 },
 	title: { type: String, default: '' },

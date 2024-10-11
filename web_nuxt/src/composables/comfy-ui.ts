@@ -16,10 +16,14 @@ const OUTPUT_PATH_URL = `http://127.0.0.1:8188/api/view?filename={filename}&subf
 
 // Data ------------------
 const isInit = ref(false);
+const isQueue = ref(false); // キューが実行中かどうか
 const state = ref<'' | 'start' | 'executing' | 'executed' | 'error'>(''); // ステータス
 const queueRemaining = ref(0); // キューの残数
 const progress = ref(0); // 進捗 0 - 1
 const output = ref<string[]>([]); // 出力ファイルパス
+const queueStartDate = ref(0); // queue 開始日時
+const queueDuration = ref(0); // queue 一つにかかるミリ秒
+const estimatedTime = ref(0); // 推定完了時間（ミリ秒）
 
 // ComfyUI ------------------
 let app: any = null;
@@ -29,10 +33,12 @@ export const useComfyUI = () => {
 	return {
 		checkInit,
 		isInit,
+		isQueue, // キューが実行中かどうか
 		state,
 		queueRemaining,
 		progress,
 		output,
+		estimatedTime,
 		loadGraph,
 		queuePrompt,
 	};
@@ -61,29 +67,47 @@ const checkInit = async () => {
 					 * 進捗状況を取得する
 					 * @see https://docs.comfy.org/essentials/comms_messages#built-in-message-types
 					 */
-					api.addEventListener('execution_start', () => {
+					// キューが開始した
+					api.addEventListener('execution_start', (evt) => {
 						state.value = 'start'
+						queueStartDate.value = Date.now();
 					})
+					// キューがエラーになった
 					api.addEventListener('execution_error', () => {
 						state.value = 'error'
+						isQueue.value = false;
 					})
+					// キューが中断された
 					api.addEventListener('execution_interrupted', () => {
 						state.value = 'error'
+						isQueue.value = false;
 					})
-					api.addEventListener('execution_cached', () => {
-						state.value = 'start'
-					})
+					// ??
+					// api.addEventListener('execution_cached', () => {
+					// 	state.value = 'start'
+					// })
+					// キューが実行中
 					api.addEventListener('executing', () => {
 						state.value = 'executing'
 					})
+					// キューが終了
 					api.addEventListener('executed', (evt) => {
 						state.value = 'executed'
+						queueDuration.value = Date.now() - queueStartDate.value;
+						estimatedTime.value = queueDuration.value * queueRemaining.value;
 						output.value.push(evt.detail.output.images.map((image: { filename: string, subfolder: string, type: string }) => {
 							return OUTPUT_PATH_URL.replace('{filename}', image.filename).replace('{subfolder}', image.subfolder).replace('{type}', image.type);
 						})[0]);
 					})
+					// キューの進捗
 					api.addEventListener('progress', (evt: any) => { progress.value = evt.detail.value / evt.detail.max })
-					api.addEventListener('status', (evt: any) => { queueRemaining.value = evt.detail.exec_info.queue_remaining })
+					// キューの残数
+					api.addEventListener('status', (evt: any) => {
+						queueRemaining.value = evt.detail.exec_info.queue_remaining
+						if (queueRemaining.value === 0) {
+							isQueue.value = false;
+						}
+					})
 
 					flag = true
 					resolve();
@@ -114,7 +138,7 @@ const loadGraph = (json: string) => {
  * @param {number} batchCount - 実行回数
  */
 const queuePrompt = async ({ json = '', batchCount = 1 }: { json?: string, batchCount?: number } = {}) => {
-	if (!isInit.value || !app) return;
+	if (!isInit.value || !app || isQueue.value) return;
 	state.value = '';
 	queueRemaining.value = 0;
 	progress.value = 0;
@@ -122,5 +146,7 @@ const queuePrompt = async ({ json = '', batchCount = 1 }: { json?: string, batch
 	if (json !== '') {
 		loadGraph(json);
 	}
-	app.queuePrompt(0, batchCount);
+	isQueue.value = true;
+	queueStartDate.value = Date.now();
+	app.queuePrompt(1, batchCount);
 }
