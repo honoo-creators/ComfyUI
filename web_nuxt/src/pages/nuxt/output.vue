@@ -13,10 +13,10 @@
 			<PageIntro icon="checkCircleLine" body="生成画像は以上です" />
 			<Container>
 				<Column justify="stretch" gap="20">
-					<Button>
+					<Button @click="handleEditSetting">
 						設定を変更してやり直す
 					</Button>
-					<Button info @click="reGenerate">
+					<Button info @click="handleNewGenerate">
 						新しい背景美術を生成する
 					</Button>
 				</Column>
@@ -45,7 +45,7 @@ definePageMeta({
 
 // Constants ------------------	
 const SPLIT = 3;
-const BATCH_COUNT = 30;
+const BATCH_COUNT = 1;
 
 // Computed ----------------------
 const title = computed(() => {
@@ -68,7 +68,10 @@ const body = computed(() => {
 })
 
 // Methods ------------------
-const reGenerate = () => {
+const handleEditSetting = () => {
+	navigateTo(useConstantsPath().GENERATE_LOOKSTYLE)
+}
+const handleNewGenerate = () => {
 	useGenerateStore().init()
 	navigateTo(useConstantsPath().GENERATE_LOOKSTYLE)
 }
