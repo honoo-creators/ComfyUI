@@ -1,8 +1,19 @@
 <template>
 	<div class="pageDev">
 		<DevHeader v-if="!route.path.includes('login')" v-resize="(rect: DOMRectReadOnly) => headerHeight = rect.height"
-			class="pageDev-menu" close @close="close" />
-		<Page center :top-space="headerHeight" bottom-space="50">
+			class="pageDev-menu" close @close="close">
+			<template #footer>
+				<Row justify="between" align="center" nowrap>
+					<Typography body bold>
+						Show ComfyUI
+					</Typography>
+					<div>
+						<Switch v-model="showComfyUI" name="showComfyUI" />
+					</div>
+				</Row>
+			</template>
+		</DevHeader>
+		<Page class="pageDev-pages" :class="{ '_hide': showComfyUI }" center :top-space="headerHeight" bottom-space="50">
 			<NuxtPage />
 		</Page>
 	</div>
@@ -19,11 +30,22 @@ const route = useRoute();
 
 // Data ------------------
 const headerHeight = ref(0);
+const showComfyUI = ref(false);
 
 // Methods ------------------
 const close = () => {
 	useRouter().push(useConstantsPath().DASHBOARD)
 }
+const toggleComfyUI = () => {
+	document.querySelector('body > .comfy-menu')?.classList.toggle('_show');
+	document.querySelector('body > .graph-canvas-container')?.classList.toggle('_show');
+	document.querySelector('body > #vue-app')?.classList.toggle('_show');
+}
+
+// Watch ------------------
+watch(() => showComfyUI.value, () => {
+	toggleComfyUI()
+})
 </script>
 
 <style lang="scss">
@@ -41,6 +63,12 @@ $cn: ".pageDev"; // コンポーネントクラス名
 			top: 0;
 			z-index: 10;
 			width: 100%;
+		}
+
+		&-pages {
+			&._hide {
+				display: none;
+			}
 		}
 	}
 

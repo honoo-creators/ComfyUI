@@ -7,9 +7,6 @@
 			<Typography>
 				Status: {{ state }}, Queue: {{ queueRemaining }}, Progress: {{ progress }}
 			</Typography>
-			<Button @click="toggleComfyUI">
-				Show Toggle ComfyUI
-			</Button>
 			<Row justify="stretch" gap="8">
 				<Button @click="loadGraph">
 					Load Graph
@@ -33,11 +30,6 @@ const { state, queueRemaining, progress, output } = useComfyUI();
 
 // Data ------------------
 const count = ref<string>('1');
-
-// Methods ------------------
-const toggleComfyUI = () => {
-	document.querySelector('body > .comfy-menu')?.classList.toggle('_show');
-}
 
 const loadGraph = () => {
 	useComfyUI().loadGraph(JSON.stringify(test001));

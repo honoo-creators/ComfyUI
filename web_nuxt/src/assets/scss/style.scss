@@ -169,6 +169,7 @@ ul {
 // Nuxt DOM スタイル
 #__nuxt {
 	position: relative;
+	z-index: 1000;
 	width: 100%;
 	overflow-y: auto;
 	background-color: var.$light;
