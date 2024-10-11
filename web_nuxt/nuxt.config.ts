@@ -80,6 +80,13 @@ const config = {
 		API_VERSION: stripeApiVersion,
 		LOCALE: stripeLocale,
 	},
+
+	// UI テーマ設定
+	theme: {
+		icon: {
+			dir: "/nuxt/assets/icons",
+		},
+	},
 };
 
 // https://nuxt.com/docs/api/configuration/nuxt-confighonoo
