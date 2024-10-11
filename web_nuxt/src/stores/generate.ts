@@ -30,7 +30,7 @@ export const useGenerateStore = defineStore({
 		promptB: [] as string[],
 		promptC: [] as string[],
 		promptD: [] as string[],
-		workflow,
+		workflow: workflow as unknown as string,
 	}),
 	getters: {
 		promptASuggests: (state) => THEMES[state.lookStyle?.name as keyof typeof THEMES]?.whatToDraw ?? [],
@@ -61,15 +61,29 @@ export const useGenerateStore = defineStore({
 		 */
 		setPromptA(value: string[]) {
 			this.promptA = value
+			this.addPrompt(['What to draw', ...value])
 		},
 		setPromptB(value: string[]) {
 			this.promptB = value
+			this.addPrompt(['Environment around', ...value])
 		},
 		setPromptC(value: string[]) {
 			this.promptC = value
+			this.addPrompt(['Color tone and mood', ...value])
 		},
 		setPromptD(value: string[]) {
 			this.promptD = value
+			this.addPrompt(['Lighing', ...value])
+		},
+		addPrompt(list: string[]) {
+			// CLIPTextEncode タイプの要素を見つけて、widgets_values を設定
+			this.workflow.nodes.forEach((node: any) => {
+				if (node.type === "CLIPTextEncode") {
+					if (Array.isArray(node.widgets_values) && node.widgets_values.length > 0) {
+						node.widgets_values[0] = `${node.widgets_values[0]},${list.join(',')}`
+					}
+				}
+			});
 		},
 
 		/**
