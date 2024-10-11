@@ -34,10 +34,7 @@ export const useAppFrontStore = defineStore({
 				exLocation: [""],
 				exOS: ["Macintosh"],
 			}); // WEBフォント
-			useMode().setDarkmode(useRuntimeConfig().public.DARKMODE); // モード
-			useMode().setSizeType(
-				useRuntimeConfig().public.SIZE_TYPE as "px" | "auto"
-			); // サイズタイプ
+			useMode().init(); // モード
 			useMediaQuery().init(); // メディアクエリ
 			useRuntimeConfig().public.DEV_ENABLED && useDev().init(); // 開発メニュー
 

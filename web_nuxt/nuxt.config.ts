@@ -11,10 +11,6 @@ const packageJsonPath = path.resolve(process.cwd(), "package.json"); // package.
 const pkg = JSON.parse(fs.readFileSync(packageJsonPath, "utf-8")); // package.json を読み込む
 const version = pkg.version; // package.json の version を取得
 
-// スタイルの初期値設定
-const sizeType = "px";
-const darkmode = false;
-
 // 環境変数を取得
 const env = process.env;
 
@@ -66,9 +62,6 @@ const config = {
 	DEV_ENABLED: devEnabled,
 	BASIC_AUTH_ENABLED: basicAuthEnabled,
 	ENVIRONMENT: environment,
-	// スタイル設定
-	SIZE_TYPE: sizeType,
-	DARKMODE: darkmode,
 
 	// Stripe 設定
 	STRIPE: {
@@ -79,13 +72,6 @@ const config = {
 		ACCOUNT: stripeAccount,
 		API_VERSION: stripeApiVersion,
 		LOCALE: stripeLocale,
-	},
-
-	// UI テーマ設定
-	theme: {
-		icon: {
-			dir: "/nuxt/assets/icons",
-		},
 	},
 };
 
