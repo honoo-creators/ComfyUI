@@ -18,7 +18,7 @@ body {
   padding: 0;
   margin: 0;
   height: 100%;
-  background-color: #2c2c2e;
+  background-color: #efefef;
   overflow-y: auto;
   font-family: greycliff-cf, "Hiragino Kaku Gothic W4 JIS2004", "Hiragino Sans", sans-serif;
   color: #383739;
@@ -36,24 +36,6 @@ body img::selection {
 }
 body._scrollLock {
   overflow: hidden;
-}
-body:not(._darkmode) {
-  background-color: #efefef;
-}
-@font-face {
-  font-family: "Hiragino Sans";
-  src: local(HiraginoSans-W4);
-  font-weight: 400;
-}
-@font-face {
-  font-family: "Hiragino Sans";
-  src: local(HiraginoSans-W7);
-  font-weight: 700;
-}
-@font-face {
-  font-family: "Hiragino Sans";
-  src: local(HiraginoSans-W8);
-  font-weight: 800;
 }
 
 img {
@@ -180,4 +162,26 @@ ul li + li {
   --max-width-narrow: 392;
   --max-width-base: 560;
   --max-width-wide: 1080;
+}
+
+#__nuxt {
+  background-color: #efefef;
+}
+#__nuxt._darkmode {
+  background-color: #2c2c2e;
+}
+@font-face {
+  font-family: "Hiragino Sans";
+  src: local(HiraginoSans-W4);
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Hiragino Sans";
+  src: local(HiraginoSans-W7);
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Hiragino Sans";
+  src: local(HiraginoSans-W8);
+  font-weight: 800;
 }
