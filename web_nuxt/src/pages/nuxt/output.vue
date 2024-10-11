@@ -10,7 +10,7 @@
 			</Row>
 		</Container>
 		<Column v-if="output.length > 0 && !isQueue" justify="center" gap="40">
-			<PageIntro icon="checkCircle" body="生成画像は以上です" />
+			<PageIntro icon="checkCircleLine" body="生成画像は以上です" />
 			<Container>
 				<Column justify="stretch" gap="20">
 					<Button>
@@ -45,7 +45,7 @@ definePageMeta({
 
 // Constants ------------------	
 const SPLIT = 3;
-const BATCH_COUNT = 2;
+const BATCH_COUNT = 30;
 
 // Computed ----------------------
 const title = computed(() => {
