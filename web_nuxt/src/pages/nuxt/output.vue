@@ -27,7 +27,6 @@
 
 <script setup lang="ts">
 import PageIntro from '~/components/elements/PageIntro.vue';
-import test001 from '~/../workflows/test001.json';
 import { useGenerateStore } from '~/stores/generate';
 
 // Composables ------------------
