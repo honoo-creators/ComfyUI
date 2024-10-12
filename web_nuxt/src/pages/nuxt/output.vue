@@ -82,7 +82,6 @@ const handleNewGenerate = () => {
 	navigateTo(useConstantsPath().GENERATE_LOOKSTYLE)
 }
 const countDown = async () => {
-	console.log('countDown', remainingTime.value)
 	const time = 1000
 	await useUtils().wait(time)
 	remainingTime.value -= time
