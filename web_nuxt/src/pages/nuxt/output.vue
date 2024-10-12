@@ -49,6 +49,10 @@ definePageMeta({
 const SPLIT = 3;
 const BATCH_COUNT = 9;
 
+// Data ------------------
+const remainingTime = ref(0);
+
+
 // Computed ----------------------
 const title = computed(() => {
 	return `${BATCH_COUNT - queueRemaining.value}/${BATCH_COUNT}`
@@ -56,16 +60,16 @@ const title = computed(() => {
 const body = computed(() => {
 	if (!isQueue.value) return '背景美術を生成しました。'
 
-	const hours = Math.floor(estimatedTime.value / 3600000);
-	const minutes = Math.floor((estimatedTime.value % 3600000) / 60000);
-	const seconds = Math.floor((estimatedTime.value % 60000) / 1000);
+	const hours = Math.floor(remainingTime.value / 3600000);
+	const minutes = Math.floor((remainingTime.value % 3600000) / 60000);
+	const seconds = Math.floor((remainingTime.value % 60000) / 1000);
 
 	let timeString = '';
 	if (hours > 0) timeString += `${hours}時間`;
 	if (minutes > 0) timeString += `${minutes}分`;
 	timeString += `${seconds}秒`;
 
-	if (isQueue.value && estimatedTime.value === 0) return '...'
+	if (isQueue.value && remainingTime.value <= 0) return '...'
 	else return `あと ${timeString}`
 })
 
@@ -77,6 +81,23 @@ const handleNewGenerate = () => {
 	store.init()
 	navigateTo(useConstantsPath().GENERATE_LOOKSTYLE)
 }
+const countDown = async () => {
+	console.log('countDown', remainingTime.value)
+	const time = 1000
+	await useUtils().wait(time)
+	remainingTime.value -= time
+	if (remainingTime.value >= 0) countDown()
+	else remainingTime.value = 0
+}
+
+// Watch ------------------
+watch(
+	() => estimatedTime.value,
+	(newVal) => {
+		if (newVal > 0 && remainingTime.value <= 0) countDown()
+		remainingTime.value = newVal
+	}
+)
 
 // Lifecycle Hooks ------------------
 onMounted(() => {

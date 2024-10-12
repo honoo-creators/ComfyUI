@@ -93,14 +93,20 @@ const checkInit = async () => {
 					// キューが終了
 					api.addEventListener('executed', (evt) => {
 						state.value = 'executed'
-						queueDuration.value = Date.now() - queueStartDate.value;
-						estimatedTime.value = queueDuration.value * queueRemaining.value;
 						output.value.push(evt.detail.output.images.map((image: { filename: string, subfolder: string, type: string }) => {
 							return OUTPUT_PATH_URL.replace('{filename}', image.filename).replace('{subfolder}', image.subfolder).replace('{type}', image.type);
 						})[0]);
 					})
 					// キューの進捗
-					api.addEventListener('progress', (evt: any) => { progress.value = evt.detail.value / evt.detail.max })
+					api.addEventListener('progress', (evt: any) => {
+						if (evt.detail.value === 1) {
+							queueStartDate.value = Date.now();
+						} else if (evt.detail.value === evt.detail.max) {
+							queueDuration.value = Date.now() - queueStartDate.value;
+							estimatedTime.value = queueDuration.value * queueRemaining.value;
+						}
+						progress.value = evt.detail.value / evt.detail.max
+					})
 					// キューの残数
 					api.addEventListener('status', (evt: any) => {
 						queueRemaining.value = evt.detail.exec_info.queue_remaining
@@ -147,6 +153,5 @@ const queuePrompt = async ({ json = '', batchCount = 1 }: { json?: string, batch
 		loadGraph(json);
 	}
 	isQueue.value = true;
-	queueStartDate.value = Date.now();
 	app.queuePrompt(1, batchCount);
 }
