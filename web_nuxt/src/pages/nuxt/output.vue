@@ -4,7 +4,9 @@
 		<Container wide>
 			<Row gap="2" :split="SPLIT">
 				<Ratio v-for="index in BATCH_COUNT" :key="`pageOutput-item-${index}`">
-					<Image v-if="output[index - 1]" :src="output[index - 1]" cover />
+					<Clickable v-if="output[index - 1]" class="pageOutput-img" @click="preview(index - 1)">
+						<Image :src="output[index - 1]" cover />
+					</Clickable>
 					<LoaderRect v-else w="100%" h="100%" animation :delay="index / SPLIT * 150" />
 				</Ratio>
 			</Row>
@@ -27,6 +29,7 @@
 
 <script setup lang="ts">
 import PageIntro from '~/components/elements/PageIntro.vue';
+import Clickable from '~/components/elements/Clickable.vue';
 import { useGenerateStore } from '~/stores/generate';
 
 // Composables ------------------
@@ -88,6 +91,9 @@ const countDown = async () => {
 	if (remainingTime.value >= 0) countDown()
 	else remainingTime.value = 0
 }
+const preview = (index: number) => {
+	useModal().open({ name: 'imagePreview', options: { list: output.value, index } })
+}
 
 // Watch ------------------
 watch(
@@ -108,7 +114,12 @@ onMounted(() => {
 $cn: ".pageOutput"; // コンポーネントクラス名
 
 @include mix.component-styles($cn) using ($mode) {
-	@if $mode =="base" {}
+	@if $mode =="base" {
+		&-img {
+			width: 100%;
+			height: 100%;
+		}
+	}
 
 	@if $mode =="darkmode" {}
 

@@ -14,8 +14,11 @@
 				<LoginRequiredSheet v-if="sheetName === 'loginRequired'" />
 				<UsageTypeSelectSheet v-if="sheetName === 'usageTypeSelect'" />
 			</SheetLayer>
-			<ProcessingLayer style="z-index: 3" />
-			<DialogLayer style="z-index: 4" />
+			<ModalLayer style="z-index: 3">
+				<ImagePreviewModal v-if="modalName === 'imagePreview'" />
+			</ModalLayer>
+			<ProcessingLayer style="z-index: 4" />
+			<DialogLayer style="z-index: 5" />
 		</div>
 	</div>
 </template>
@@ -25,9 +28,11 @@ import { useAppStore } from "~/stores/app";
 import TheMyMenu from "~/components/drawer/TheMyMenu.vue";
 import LoginRequiredSheet from "~/components/sheet/LoginRequiredSheet.vue";
 import UsageTypeSelectSheet from "~/components/sheet/UsageTypeSelectSheet.vue";
+import ImagePreviewModal from "~/components/modal/ImagePreviewModal.vue";
 
 // Composables ------------------
 const { name: sheetName } = useSheet();
+const { name: modalName } = useModal();
 const route = useRoute()
 
 // Data ------------------
