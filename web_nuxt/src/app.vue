@@ -77,6 +77,13 @@ onMounted(async () => {
 
 	await useUtils().wait(100);
 	navigateTo(useConstantsPath().DASHBOARD);
+
+	// ファビコンを設定する。 ComfyUI Manager が上書きするため、ここで再度設定して上書きする。
+	useHead({
+		link: [
+			{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+		],
+	})
 });
 </script>
 

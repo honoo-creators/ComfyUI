@@ -139,6 +139,22 @@ export default defineNuxtConfig({
 		"@nuxt/eslint", // ESLint
 		"@honoo-creators/ui", // Honoo UI
 	],
+
+
+
+	app: {
+		// ページのタイトルを設定
+		head: {
+			title: 'Honoo Technologies',
+			htmlAttrs: {
+				lang: 'ja',
+			},
+			link: [
+				{ rel: 'icon', type: 'image/x-icon', href: `/favicon.ico?v=${version}` },
+			],
+		},
+	},
+
 	vite: {
 		server: {
 			watch: {
