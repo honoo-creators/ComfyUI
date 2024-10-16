@@ -177,15 +177,33 @@ ul {
 
 // ComfyUI の要素を非表示にする
 body {
-	> [class^="comfy"],
-	#vue-app,
-	.graph-canvas-container,
-	.pysssss-image-feed {
+	> [class^="comfy"], // ComfyUI の要素
+	#vue-app, // Nuxt の要素
+	.p-toast, // 通知？ Toast の要素
+	.pysssss-image-feed // ComfyUI Manager の要素
+	{
 		display: none;
 
 		&._show {
 			pointer-events: auto;
 			display: block;
+		}
+	}
+
+	// グラフの Canvas は別で設定する
+	.graph-canvas-container {
+		// 背景に敷く
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+
+		// 非表示
+		opacity: 0;
+
+		&._show {
+			opacity: 1;
 		}
 	}
 }

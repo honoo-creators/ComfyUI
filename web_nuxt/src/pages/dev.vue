@@ -40,20 +40,8 @@ const toggleComfyUI = () => {
 	document.querySelector('body > .comfy-menu')?.classList.toggle('_show');
 	document.querySelector('body > .graph-canvas-container')?.classList.toggle('_show');
 	document.querySelector('body > .pysssss-image-feed')?.classList.toggle('_show');
+	document.querySelector('body > .p-toast')?.classList.toggle('_show');
 	document.querySelector('body > #vue-app')?.classList.toggle('_show');
-
-	/**
-	 * ToDo: Canvas の update をして ComfyUI の Canvas を表示する
-	 */
-	// 表示する場合
-	// if (showComfyUI.value) {
-	// 	// #graph-canvas の canvas 要素の width と height を指定
-	// 	const canvas = document.querySelector('canvas#graph-canvas') as HTMLCanvasElement;
-	// 	if (canvas) {
-	// 		canvas.width = window.innerWidth * 2;
-	// 		canvas.height = window.innerHeight * 2;
-	// 	}
-	// }
 }
 
 // Watch ------------------
