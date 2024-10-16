@@ -2,9 +2,7 @@
 _nuxt
 
 # @honoo-creators/ui のファイル
-avatar
-icons
-imgs
+honoo-ui
 
 # Pages
 nuxt

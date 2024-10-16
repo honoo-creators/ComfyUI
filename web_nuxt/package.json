@@ -17,7 +17,7 @@
 		"utils:unused-components": "node utils/find-unused-components.js"
 	},
 	"dependencies": {
-		"@honoo-creators/ui": "file:../../honoo-ui-components/packs/honoo-creators-ui-1.3.5.tgz",
+		"@honoo-creators/ui": "file:../../honoo-ui-components/packs/honoo-creators-ui-1.4.0.tgz",
 		"@nuxt/devtools": "^1.4.1",
 		"@pinia/plugin-debounce": "^1.0.1",
 		"normalize.css": "^8.0.1",
