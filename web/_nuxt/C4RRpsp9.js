@@ -1,0 +1,1 @@
+const l=()=>({equal:s,shuffle:u,unique:o,numberArray:a}),s=(r,e)=>JSON.stringify(r)===JSON.stringify(e),u=r=>{let e=[];for(;r.length>0;){let n=r.length,t=Math.floor(Math.random()*n);e.push(r[t]),r.splice(t,1)}return e},o=r=>Array.from(new Set(r.map(e=>JSON.stringify(e)))).map(e=>JSON.parse(e)),a=(r,e)=>Array.from({length:e},(n,t)=>r+t);export{l as u};
