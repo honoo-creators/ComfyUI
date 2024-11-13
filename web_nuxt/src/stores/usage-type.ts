@@ -12,12 +12,14 @@ const DUMMY_LIST: UsageType[] = [
 	{
 		type: 'personal',
 		id: 0,
-		profile: null, // 自分のプロフィールを使用する
+		profile: { name: 'Yuichi Ishihara', face: 'face/0/1/QOhA9dRVSPSltUty.png' } as EnterpriseProfile, // 自分のプロフィールを使用する
+		ticket: 3,
 	},
 	{
 		type: 'enterprise',
 		id: 1,
 		profile: { name: 'Honoo Anime Creators & Studios', face: 'face/0/13/22FHbkc3FHOgkLjHYKmtlyY8v6fI6krIxjkeAgnc.jpg' } as EnterpriseProfile,
+		ticket: Infinity,
 	}
 ]
 
@@ -28,9 +30,9 @@ export const useUsageTypeStore = defineStore({
 	}),
 	getters: {
 		list: () => DUMMY_LIST,
-		face: (state) => state.active.type === 'personal' ? useMeStore().face : state.active.profile?.face ?? '',
-		name: (state) => state.active.type === 'personal' ? useMeStore().name : state.active.profile?.name ?? '',
-		ticket: (state) => state.active.type === 'personal' ? useMeStore().ticket : Infinity,
+		face: (state) => state.active.profile?.face ?? '',
+		name: (state) => state.active.profile?.name ?? '',
+		ticket: (state) => state.active.ticket,
 	},
 	actions: {
 		/**

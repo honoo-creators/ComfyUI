@@ -34,7 +34,7 @@ const props = defineProps({
 // Computed ------------------
 const name = computed(() => props.data.profile ? props.data.profile.name : useMeStore().name)
 const face = computed(() => props.data.profile ? props.data.profile.face : useMeStore().face)
-const ticket = computed(() => props.data.profile ? Infinity : useMeStore().ticket)
+const ticket = computed(() => props.data.ticket)
 const enterprise = computed(() => props.data.type === 'enterprise')
 </script>
 

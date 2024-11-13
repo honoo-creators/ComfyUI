@@ -21,6 +21,16 @@
 					<Typography headline extrabold center>
 						{{ name }}
 					</Typography>
+					<template v-if="ticket !== Infinity">
+						<Row justify="center" align="end" gap="1" nowrap>
+							<Typography body bold baseline-height>
+								{{ ticket }}
+							</Typography>
+							<Typography caption2 bold baseline-height>
+								チケット
+							</Typography>
+						</Row>
+					</template>
 				</Column>
 				<Button @click="useRouter().push(useConstantsPath().OUTPUT)">
 					生成する
@@ -51,7 +61,7 @@ definePageMeta({
 
 // Stores ------------------
 const { lookStyle, base64, promptA, promptB, promptC, promptD } = useGenerateStore()
-const { face, name } = useUsageTypeStore()
+const { face, name, ticket } = useUsageTypeStore()
 </script>
 
 <style lang="scss">
