@@ -1,0 +1,1 @@
+.loaderRect{animation:loaderRect-animation 1.5s infinite;background-color:#3837390d;max-width:100%}@keyframes loaderRect-animation{0%{opacity:1}50%{opacity:.5}to{opacity:1}}#__nuxt._darkmode .loaderRect{background-color:#f0f0f00d}
