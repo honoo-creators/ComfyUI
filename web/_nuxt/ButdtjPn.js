@@ -1,1 +1,0 @@
-import{Z as r,j as t,k as a,w as o,Q as u,q as c,o as d,A as f,$ as i}from"./DnIVQ8ma.js";const _={},m={class:"pageDevIndex"};function l(n,e){const s=c;return d(),t("div",m,[a(s,{onClick:e[0]||(e[0]=p=>("useDrawer"in n?n.useDrawer:u(i))().open({name:"myMenu"}))},{default:o(()=>e[1]||(e[1]=[f(" TheMyMenu ")])),_:1})])}const k=r(_,[["render",l]]);export{k as default};
