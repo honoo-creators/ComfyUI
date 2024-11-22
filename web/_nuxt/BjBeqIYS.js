@@ -1,1 +1,0 @@
-import{a0 as a,j as r,k as t,w as o,Q as u,Z as c,o as d,l as f,a1 as i}from"./Bb_j92YR.js";const _={},l={class:"pageDevIndex"};function m(n,e){const s=c;return d(),r("div",l,[t(s,{onClick:e[0]||(e[0]=p=>("useDrawer"in n?n.useDrawer:u(i))().open({name:"myMenu"}))},{default:o(()=>e[1]||(e[1]=[f(" TheMyMenu ")])),_:1})])}const k=a(_,[["render",m]]);export{k as default};

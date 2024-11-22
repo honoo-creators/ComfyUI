@@ -1,1 +1,0 @@
-import{d as t,o as n,j as o,k as a,U as _}from"./Bb_j92YR.js";const s={class:"pageGenerate"},d=t({__name:"generate",setup(c){return(r,p)=>{const e=_;return n(),o("div",s,[a(e)])}}});export{d as default};

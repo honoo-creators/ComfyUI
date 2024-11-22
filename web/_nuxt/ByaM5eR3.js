@@ -1,0 +1,1 @@
+import{d as a,o,a as t,w as s,k as n,M as _}from"./Dh9AkNtL.js";import{_ as c}from"./raIGOyrH.js";const l=a({__name:"page-intro",setup(r){return(p,m)=>{const e=_;return o(),t(e,{class:"pageDevElementsPageIntro",gap:"40"},{default:s(()=>[n(c,{icon:"shapes",title:"背景美術スタイルを選択してください",body:"事前に設定されたルックスタイルがある場合は<br />該当するスタイルを選んでください。"})]),_:1})}}});export{l as default};
