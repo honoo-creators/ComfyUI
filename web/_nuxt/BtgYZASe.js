@@ -1,0 +1,1 @@
+import{a0 as a,j as r,k as t,w as o,Q as u,V as c,o as d,l as f,a1 as i}from"./D3Ft7b30.js";const _={},l={class:"pageDevIndex"};function m(n,e){const s=c;return d(),r("div",l,[t(s,{onClick:e[0]||(e[0]=p=>("useDrawer"in n?n.useDrawer:u(i))().open({name:"myMenu"}))},{default:o(()=>e[1]||(e[1]=[f(" TheMyMenu ")])),_:1})])}const k=a(_,[["render",m]]);export{k as default};
