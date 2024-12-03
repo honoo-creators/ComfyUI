@@ -1,0 +1,1 @@
+import{_ as e}from"./DLFdnAhv.js";import{a6 as a,g as s,l as r,w as c,t as n}from"./QWLheGxm.js";const _={};function l(o,f){const t=e;return s(),r(t,{per:240/530*100,class:"lookStyleRatio"},{default:c(()=>[n(o.$slots,"default")]),_:3})}const p=a(_,[["render",l]]);export{p as L};
