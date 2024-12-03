@@ -1,1 +1,0 @@
-import{a6 as s,h as r,i as t,w as o,j as u,a1 as c,g as d,D as i,a7 as f}from"./QWLheGxm.js";const _={},m={class:"pageDevIndex"};function l(n,e){const a=c;return d(),r("div",m,[t(a,{onClick:e[0]||(e[0]=p=>("useDrawer"in n?n.useDrawer:u(f))().open({name:"myMenu"}))},{default:o(()=>e[1]||(e[1]=[i(" TheMyMenu ")])),_:1})])}const D=s(_,[["render",l]]);export{D as default};
