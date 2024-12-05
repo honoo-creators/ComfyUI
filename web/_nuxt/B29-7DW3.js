@@ -1,1 +1,0 @@
-import{a3 as a,g as r,z as t,w as o,X as u,$ as c,f as d,A as f,a4 as i}from"./DAo9FXbr.js";const _={},m={class:"pageDevIndex"};function l(n,e){const s=c;return d(),r("div",m,[t(s,{onClick:e[0]||(e[0]=p=>("useDrawer"in n?n.useDrawer:u(i))().open({name:"myMenu"}))},{default:o(()=>e[1]||(e[1]=[f(" TheMyMenu ")])),_:1})])}const x=a(_,[["render",l]]);export{x as default};
