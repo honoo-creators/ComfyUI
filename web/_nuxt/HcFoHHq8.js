@@ -1,1 +1,0 @@
-import{_ as e}from"./ANxciWS5.js";import{a4 as a,f as s,k as r,w as c,r as n}from"./BFpHv30j.js";const _={};function f(o,l){const t=e;return s(),r(t,{per:240/530*100,class:"lookStyleRatio"},{default:c(()=>[n(o.$slots,"default")]),_:3})}const p=a(_,[["render",f]]);export{p as L};

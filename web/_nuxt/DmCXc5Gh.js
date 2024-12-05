@@ -1,1 +1,0 @@
-import{a4 as s,g as r,h as t,w as o,i as u,a0 as c,f as d,B as f,a5 as i}from"./BFpHv30j.js";const _={},m={class:"pageDevIndex"};function l(n,e){const a=c;return d(),r("div",m,[t(a,{onClick:e[0]||(e[0]=p=>("useDrawer"in n?n.useDrawer:u(i))().open({name:"myMenu"}))},{default:o(()=>e[1]||(e[1]=[f(" TheMyMenu ")])),_:1})])}const x=s(_,[["render",l]]);export{x as default};
