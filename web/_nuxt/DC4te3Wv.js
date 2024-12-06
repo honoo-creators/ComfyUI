@@ -1,1 +1,0 @@
-import{a6 as s,g as r,z as t,w as o,Y as u,a2 as c,f as d,A as f,a7 as i}from"./Crsonu-_.js";const _={},m={class:"pageDevIndex"};function l(n,e){const a=c;return d(),r("div",m,[t(a,{onClick:e[0]||(e[0]=p=>("useDrawer"in n?n.useDrawer:u(i))().open({name:"myMenu"}))},{default:o(()=>e[1]||(e[1]=[f(" TheMyMenu ")])),_:1})])}const x=s(_,[["render",l]]);export{x as default};
