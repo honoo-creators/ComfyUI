@@ -1,0 +1,1 @@
+import{d as t,f as a,i as o,w as n,z as r,V as i}from"./Crsonu-_.js";import{_ as s}from"./DlwXUkzd.js";import"./CSm3VhpL.js";import"./BfYdLb8t.js";import"./BvrZ71a6.js";import"./CAJ0NNyj.js";const w=t({__name:"generate-setting",setup(_){return(c,m)=>{const e=i;return a(),o(e,{class:"pageDevNavigationGenerateSetting",wide:""},{default:n(()=>[r(s)]),_:1})}}});export{w as default};
