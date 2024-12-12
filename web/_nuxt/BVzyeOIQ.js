@@ -1,0 +1,1 @@
+import{d as t,f as a,i as o,w as n,z as r,V as i}from"./CelK7s9M.js";import{_ as s}from"./BLIC_Dli.js";import"./dgHl7ZPB.js";import"./DohJ4GFk.js";import"./2-mJ__ao.js";import"./DToIYiWG.js";const w=t({__name:"generate-setting",setup(_){return(c,m)=>{const e=i;return a(),o(e,{class:"pageDevNavigationGenerateSetting",wide:""},{default:n(()=>[r(s)]),_:1})}}});export{w as default};
