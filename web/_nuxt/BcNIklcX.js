@@ -1,0 +1,1 @@
+import{d as o,g as a,f as s,h as r,w as n,q as c,H as p,z as _}from"./WHSOQWA4.js";const i={class:"prompt"},u=o({__name:"Prompt",props:{text:{type:String,default:"",required:!0}},setup(t){return(l,d)=>{const e=_;return a(),s("div",i,[r(e,{caption3:"",bold:"",unselectable:"",color:"light"},{default:n(()=>[c(p(t.text),1)]),_:1})])}}});export{u as _};
