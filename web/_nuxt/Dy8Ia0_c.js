@@ -1,1 +1,0 @@
-import{_ as e}from"./DfZwukZZ.js";import{aF as a,g as s,p as r,w as c,I as n}from"./WHSOQWA4.js";const _={};function l(o,f){const t=e;return s(),r(t,{per:240/530*100,class:"lookStyleRatio"},{default:c(()=>[n(o.$slots,"default")]),_:3})}const m=a(_,[["render",l]]);export{m as L};
