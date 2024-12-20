@@ -1,1 +1,0 @@
-import{_ as t}from"./B6KN3N1j.js";import{d as n,x as e,f as c,g as p,z as d,ac as i,ad as _,Y as s}from"./BZrGgrSf.js";const m={class:"pageDevLoaderPieLoader"},v=n({__name:"pie-loader",setup(f){const r=e(20),o=e(4),a=e(80);return(l,u)=>(c(),p("div",m,[d(t,i(_({progress:s(r),border:s(o),size:s(a)})),null,16)]))}});export{v as default};
