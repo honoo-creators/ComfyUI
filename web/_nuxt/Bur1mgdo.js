@@ -1,1 +1,0 @@
-import{_ as a}from"./CvXB3gcu.js";import{aa as e,f as s,i as r,w as c,r as n}from"./CNmnPXM6.js";const _={};function f(o,i){const t=a;return s(),r(t,{per:240/530*100,class:"lookStyleRatio"},{default:c(()=>[n(o.$slots,"default")]),_:3})}const p=e(_,[["render",f]]);export{p as L};
