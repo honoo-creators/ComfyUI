@@ -1,5 +1,0 @@
-import{d as l,h,f as o,g as n,k as d,aq as i,Y as s,x as r,z as u,ac as _,ad as m}from"./DYyTSrtx.js";const g={class:"pieLoader"},f=["width","height"],k=["stroke-dasharray"],y=l({__name:"PieLoader",props:{progress:{type:Number,default:0},size:{type:[String,Number],default:100},stroke:{type:[String,Number],default:2.8}},setup(e){const t=e,a=h(()=>({"stroke-width":t.stroke}));return(c,p)=>(o(),n("div",g,[(o(),n("svg",{width:e.size,height:e.size,viewBox:"0 0 36 36",class:"pieLoader-chart"},[d("path",{class:"pieLoader-chart-bg",style:i(s(a)),d:`M18 2.0845
-         a 15.9155 15.9155 0 0 1 0 31.831
-         a 15.9155 15.9155 0 0 1 0 -31.831`},null,4),d("path",{class:"pieLoader-chart-stroke",style:i(s(a)),"stroke-dasharray":`${e.progress}, 100`,d:`M18 2.0845
-         a 15.9155 15.9155 0 0 1 0 31.831
-         a 15.9155 15.9155 0 0 1 0 -31.831`},null,12,k)],8,f))]))}}),z={class:"pageDevLoaderPieLoader"},v=l({__name:"pie-loader",setup(e){const t=r(20),a=r(4),c=r(80);return(p,L)=>(o(),n("div",z,[u(y,_(m({progress:s(t),border:s(a),size:s(c)})),null,16)]))}});export{v as default};
