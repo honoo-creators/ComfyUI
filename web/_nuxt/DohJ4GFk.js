@@ -1,1 +1,0 @@
-import{_ as e}from"./2-mJ__ao.js";import{a6 as a,f as s,i as r,w as c,r as n}from"./CelK7s9M.js";const _={};function f(o,i){const t=e;return s(),r(t,{per:240/530*100,class:"lookStyleRatio"},{default:c(()=>[n(o.$slots,"default")]),_:3})}const p=a(_,[["render",f]]);export{p as L};
