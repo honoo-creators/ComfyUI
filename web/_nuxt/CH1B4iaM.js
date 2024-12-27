@@ -1,1 +1,0 @@
-import{au as t,b as s,av as o,O as r,s as u,C as i}from"./CdXuvUie.js";const d=t(async()=>{let e,a;if(!s().loggedIn.value)return[e,a]=o(()=>r().open({name:"loginRequired"})),await e,a(),u({statusCode:Number(i.AuthorizationRequired),statusMessage:"ToDo: Navigate to Top Page"})});export{d as default};
