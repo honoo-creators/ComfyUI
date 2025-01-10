@@ -1,1 +1,0 @@
-import{aa as s,g as r,z as t,w as o,Y as u,a2 as c,f as d,A as f,ab as i}from"./2cQcOUCs.js";const _={},m={class:"pageDevIndex"};function l(a,e){const n=c;return d(),r("div",m,[t(n,{onClick:e[0]||(e[0]=p=>("useDrawer"in a?a.useDrawer:u(i))().open({name:"myMenu"}))},{default:o(()=>e[1]||(e[1]=[f(" TheMyMenu ")])),_:1})])}const x=s(_,[["render",l]]);export{x as default};
