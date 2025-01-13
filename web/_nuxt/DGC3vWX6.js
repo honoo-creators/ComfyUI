@@ -1,1 +1,0 @@
-import{d as s,f as a,g as n,z as c,w as p,A as r,a0 as _,a2 as m}from"./BCrv1MvN.js";const l={class:"pageDevSheetTest"},u=s({__name:"test",setup(i){const t=async()=>{console.log("prompt resolve",await _().open({name:"prompt"}))};return(d,e)=>{const o=m;return a(),n("div",l,[c(o,{onClick:t},{default:p(()=>e[0]||(e[0]=[r(" Prompt ")])),_:1})])}}});export{u as default};
