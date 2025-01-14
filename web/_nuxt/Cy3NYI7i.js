@@ -1,1 +1,0 @@
-import{aY as t,b as s,aZ as o,a0 as r,s as u,C as i}from"./Dy_l3_DK.js";const d=t(async()=>{let e,a;if(!s().loggedIn.value)return[e,a]=o(()=>r().open({name:"loginRequired"})),await e,a(),u({statusCode:Number(i.AuthorizationRequired),statusMessage:"ToDo: Navigate to Top Page"})});export{d as default};
