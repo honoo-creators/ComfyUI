@@ -1,1 +1,0 @@
-import{d as a,f as t,i as s,w as n,z as o,aa as c,U as _}from"./CAl-SmYJ.js";const f=a({__name:"page-intro",setup(r){return(p,i)=>{const e=_;return t(),s(e,{class:"pageDevElementsPageIntro",gap:"40"},{default:n(()=>[o(c,{icon:"shapes",title:"ルックスタイルを選択してください",body:"事前に設定されたルックスタイルがある場合は<br />該当するスタイルを選んでください。"})]),_:1})}}});export{f as default};
