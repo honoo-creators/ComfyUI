@@ -1,0 +1,1 @@
+.draggable{cursor:move}.draggable>*{pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.draggable._disabled{cursor:default}

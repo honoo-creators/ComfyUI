@@ -1,0 +1,1 @@
+.scrollX{height:100%;width:100%}.scrollX._scroll{overflow-x:scroll}.scrollX:not(._scrollBar){-ms-overflow-style:none;scrollbar-width:none}.scrollX:not(._scrollBar)::-webkit-scrollbar{display:none}
