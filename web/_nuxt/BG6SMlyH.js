@@ -1,0 +1,1 @@
+import{ac as s,c as a,a as n,w as c,f as p,o as r,e as _,l as m}from"./H8NUP-SF.js";const l={class:"pageDevSheetTest"},u=s({__name:"test",setup(i){const t=async()=>{console.log("prompt resolve",await m().open({name:"prompt"}))};return(d,e)=>{const o=p;return r(),a("div",l,[n(o,{onClick:t},{default:c(()=>e[0]||(e[0]=[_(" Prompt ")])),_:1})])}}});export{u as default};

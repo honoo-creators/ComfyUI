@@ -1,1 +1,0 @@
-import{aa as e,o as t,ai as o,w as s,a as n,aq as c,F as _}from"./CJQxQ-sn.js";const l=e({__name:"page-intro",setup(r){return(p,i)=>{const a=_;return t(),o(a,{class:"pageDevElementsPageIntro",gap:"40"},{default:s(()=>[n(c,{icon:"shapes",title:"ルックスタイルを選択してください",body:"事前に設定されたルックスタイルがある場合は<br />該当するスタイルを選んでください。"})]),_:1})}}});export{l as default};

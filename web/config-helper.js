@@ -1,12 +1,20 @@
 import path from "node:path";
 import fs from "node:fs";
+import { fileURLToPath } from "node:url";
 import dotenv from "dotenv";
 function getVersion() {
-  const packageJsonPath = path.resolve(process.cwd(), "package.json");
-  const pkg = JSON.parse(fs.readFileSync(packageJsonPath, "utf-8"));
-  return pkg.version;
+  try {
+    const packageJsonPath = path.resolve(process.cwd(), "package.json");
+    const pkg = JSON.parse(fs.readFileSync(packageJsonPath, "utf-8"));
+    return pkg.version;
+  } catch (error) {
+    console.error("Error reading package.json:", error);
+    return "unknown";
+  }
 }
 export function createRuntimeConfig() {
+  const __filename = fileURLToPath(import.meta.url);
+  const __dirname = path.dirname(__filename);
   dotenv.config({ path: path.resolve(__dirname, "../env/.env") });
   const env = process.env;
   const publicConfig = Object.entries(env).reduce((acc, [key, value]) => {
