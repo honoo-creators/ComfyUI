@@ -1,1 +1,0 @@
-import{_ as n,c as r,a,w as t,b as c,o as _,d,e as i,t as p,P as l}from"./H8NUP-SF.js";const f={},m={class:"pageUserIdIndex"};function u(e,g){const o=d,s=c;return _(),r("div",m,[a(s,{narrow:""},{default:t(()=>[a(o,{"large-title":""},{default:t(()=>[i(p((e._.provides[l]||e.$route).params.userId),1)]),_:1})]),_:1})])}const h=n(f,[["render",u]]);export{h as default};

@@ -1,1 +1,0 @@
-import{i as a,j as s,k as o,l as r,s as u,C as i}from"./H8NUP-SF.js";const d=a(async()=>{let e,t;if(!s().loggedIn.value)return[e,t]=o(()=>r().open({name:"loginRequired"})),await e,t(),u({statusCode:Number(i.AuthorizationRequired),statusMessage:"ToDo: Navigate to Top Page"})});export{d as default};
