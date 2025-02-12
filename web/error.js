@@ -62,6 +62,7 @@ export class CustomError extends Error {
    * @param error 任意のエラーオブジェクト
    * @returns CustomErrorインスタンス
    */
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   static fromError(error) {
     if (error instanceof CustomError) {
       return error;
