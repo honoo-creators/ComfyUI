@@ -1,0 +1,1 @@
+import{ab as s,c as a,a as n,w as c,b as p,o as r,d as _,j as m}from"./CaE7RP7u.js";const l={class:"pageDevSheetTest"},f=s({__name:"test",setup(i){const t=async()=>{console.log("prompt resolve",await m().open({name:"prompt"}))};return(d,e)=>{const o=p;return r(),a("div",l,[n(o,{onClick:t},{default:c(()=>e[0]||(e[0]=[_(" Prompt ")])),_:1})])}}});export{f as default};
