@@ -1,0 +1,1 @@
+.slider-inner{display:flex;overflow-x:auto;scroll-behavior:smooth;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;-ms-overflow-style:none;scrollbar-width:none}.slider-inner::-webkit-scrollbar{display:none}.slider-prev{left:0}.slider-next,.slider-prev{position:absolute;top:50%;transform:translateY(-50%)}.slider-next{right:0}
