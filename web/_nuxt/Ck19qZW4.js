@@ -1,0 +1,1 @@
+import{_ as a,c as r,a as t,w as o,u,b as c,o as d,d as _,e as f}from"./BXSrSJfr.js";const i={},m={class:"pageDevIndex"};function l(n,e){const s=c;return d(),r("div",m,[t(s,{onClick:e[0]||(e[0]=p=>("useDrawer"in n?n.useDrawer:u(f))().open({name:"myMenu"}))},{default:o(()=>e[1]||(e[1]=[_(" TheMyMenu ")])),_:1})])}const x=a(i,[["render",l]]);export{x as default};
