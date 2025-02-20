@@ -1,1 +1,0 @@
-import{ab as e,ai as t,w as o,F as s,o as n,a as c,ar as _}from"./Bf4R22fe.js";const l=e({__name:"page-intro",setup(r){return(p,i)=>{const a=s;return n(),t(a,{class:"pageDevElementsPageIntro",gap:"40"},{default:o(()=>[c(_,{icon:"shapes",title:"ルックスタイルを選択してください",body:"事前に設定されたルックスタイルがある場合は<br />該当するスタイルを選んでください。"})]),_:1})}}});export{l as default};
