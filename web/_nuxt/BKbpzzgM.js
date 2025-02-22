@@ -1,0 +1,1 @@
+import{p as f}from"./BdrimCxI.js";export{f as default};
