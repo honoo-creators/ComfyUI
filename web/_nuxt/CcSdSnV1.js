@@ -1,0 +1,1 @@
+import{d as a,u as s,e as o,a as r,s as u,C as i}from"./rv6QT8of.js";const n=a(async()=>{let e,t;if(!s().loggedIn.value)return[e,t]=o(()=>r().open({name:"loginRequired"})),await e,t(),u({statusCode:Number(i.AuthorizationRequired),statusMessage:"ToDo: Navigate to Top Page"})});export{n as default};
