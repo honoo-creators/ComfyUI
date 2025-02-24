@@ -1,0 +1,1 @@
+import{g as r,m as o,n as u,p,q as g}from"./DSHFl3xu.js";const i=r(l=>{if(l.path!==o().generate("lookstyle")){const{lookStyle:s,base64:n,promptScene:e,promptMood:a,promptLighting:t}=u(p());if(!s.value&&!n.value&&e.value&&!e.value.length&&a.value&&!a.value.length&&t.value&&!t.value.length)return g(o().dashboard())}});export{i as default};

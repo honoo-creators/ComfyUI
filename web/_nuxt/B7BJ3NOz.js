@@ -1,1 +1,0 @@
-import{_ as c,c as n,o as t,a as e,w as r,ab as _,D as i,I as l}from"./rck74g0n.js";const f={},d={class:"layoutProcessing"};function p(s,m){const o=i,a=l;return t(),n("div",d,[e(a,{class:"layoutProcessing-page",center:""},{default:r(()=>[e(o),_(s.$slots,"default")]),_:3})])}const g=c(f,[["render",p]]);export{g as default};
