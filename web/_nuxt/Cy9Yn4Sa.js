@@ -1,1 +1,0 @@
-import{ab as a,c as o,a as n,w as c,b as r,o as l,d as _,j as d}from"./RFFUVrrq.js";const p={class:"pageDevSheetTest"},h=a({__name:"schedule-alert",setup(u){const t=async()=>{await d().open({name:"scheduleAlert"})};return(i,e)=>{const s=r;return l(),o("div",p,[n(s,{onClick:t},{default:c(()=>e[0]||(e[0]=[_(" ScheduleAlert ")])),_:1})])}}});export{h as default};
