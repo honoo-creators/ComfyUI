@@ -1,1 +1,0 @@
-import{ac as a,c as e,a as r,ao as c,F as t,o as l}from"./Di5F4Duh.js";const n={class:"indicatorScroll"},m=a({__name:"IndicatorScroll",props:{h:{type:[Number,String],default:100},color:{type:String,default:"dark"}},setup(o){return(s,i)=>(l(),e("div",n,[r(t,c({class:"indicatorScroll-bar"},{h:o.h,color:o.color}),null,16)]))}});export{m as _};
