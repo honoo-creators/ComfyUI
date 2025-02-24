@@ -1,1 +1,0 @@
-import{ab as s,c as a,a as c,w as n,b as _,o as l,d,aC as p}from"./k1tiHxBV.js";const r={class:"pageDevSchedule"},f=s({__name:"schedule",setup(u){const o=()=>{console.log(p().open())};return(i,e)=>{const t=_;return l(),a("div",r,[c(t,{onClick:o},{default:n(()=>e[0]||(e[0]=[d(" Check Open ")])),_:1})])}}});export{f as default};
