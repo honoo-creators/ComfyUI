@@ -1,0 +1,1 @@
+import{g as r,l as o,m as u,p,n as v}from"./RFFUVrrq.js";const i=r(l=>{if(l.path!==o().GENERATE_LOOKSTYLE){const{lookStyle:s,base64:n,promptScene:e,promptMood:a,promptLighting:t}=u(p());if(!s.value&&!n.value&&e.value&&!e.value.length&&a.value&&!a.value.length&&t.value&&!t.value.length)return v(o().dashboard())}});export{i as default};
