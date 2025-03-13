@@ -1,0 +1,1 @@
+import{_ as c,c as n,o as t,a as e,w as r,aa as _,B as i,H as l}from"./Dtv-Y39l.js";const f={},d={class:"layoutProcessing"};function p(s,m){const a=i,o=l;return t(),n("div",d,[e(o,{class:"layoutProcessing-page",center:""},{default:r(()=>[e(a),_(s.$slots,"default")]),_:3})])}const g=c(f,[["render",p]]);export{g as default};
