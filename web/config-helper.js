@@ -12,20 +12,20 @@ function getVersion() {
     return "unknown";
   }
 }
-export function createRuntimeConfig() {
+export const createRuntimeConfig = () => {
   const __filename = fileURLToPath(import.meta.url);
   const __dirname = path.dirname(__filename);
   dotenv.config({ path: path.resolve(__dirname, "../env/.env") });
   const env = process.env;
   const publicConfig = Object.entries(env).reduce((acc, [key, value]) => {
     if (key.startsWith("PUBLIC_")) {
-      acc[key] = value;
+      acc[key.replace("PUBLIC_", "")] = value;
     }
     return acc;
   }, {});
   const privateConfig = Object.entries(env).reduce((acc, [key, value]) => {
     if (key.startsWith("PRIVATE_")) {
-      acc[key] = value;
+      acc[key.replace("PRIVATE_", "")] = value;
     }
     return acc;
   }, {});
@@ -36,4 +36,4 @@ export function createRuntimeConfig() {
       VERSION: getVersion()
     }
   };
-}
+};
