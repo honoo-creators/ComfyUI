@@ -1,1 +1,0 @@
-import{ab as a,c as e,a as r,an as c,E as t,o as n}from"./Dtv-Y39l.js";const l={class:"indicatorScroll"},m=a({__name:"IndicatorScroll",props:{h:{type:[Number,String],default:100},color:{type:String,default:"dark"}},setup(o){return(s,i)=>(n(),e("div",l,[r(t,c({class:"indicatorScroll-bar"},{h:o.h,color:o.color}),null,16)]))}});export{m as _};
