@@ -1,1 +1,0 @@
-import{a4 as n,k as t,o as c,a5 as e,a6 as r,a7 as _,v as i,A as l}from"./Ce_UIGL4.js";const f={},d={class:"layoutProcessing"};function p(s,m){const a=i,o=l;return c(),t("div",d,[e(o,{class:"layoutProcessing-page",center:""},{default:r(()=>[e(a),_(s.$slots,"default")]),_:3})])}const g=n(f,[["render",p]]);export{g as default};
